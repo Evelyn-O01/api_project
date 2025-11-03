@@ -9,7 +9,7 @@ class TeacherController extends Controller
 {
     public function index()
     {
-        $teachers = Teacher::orderBy('id', 'desc')->get(); 
+        $teachers = Teacher::orderBy('id', 'asc')->get(); 
         return response()->json($teachers);
     }
 

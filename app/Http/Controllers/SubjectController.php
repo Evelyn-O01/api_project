@@ -10,7 +10,7 @@ class SubjectController extends Controller
    
      public function index()
     {
-        $teachers = Subject::orderBy('id', 'desc')->get(); 
+        $teachers = Subject::orderBy('id', 'asc')->get(); 
         return response()->json($teachers);
     }
 

@@ -10,7 +10,7 @@ class GroupController extends Controller
     
      public function index()
     {
-        $teachers = Group::orderBy('id', 'desc')->get(); 
+        $teachers = Group::orderBy('id', 'asc')->get(); 
         return response()->json($teachers);
     }
 
