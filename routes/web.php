@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\LaboratoryController;
 use App\Models\Subject;
 
 //Route::get('/', function () {
@@ -13,6 +15,8 @@ use App\Models\Subject;
 Route::apiResource('subjects', SubjectController::class);
 Route::apiResource('groups', GroupController::class);
 Route::apiResource('teachers', TeacherController::class);
+Route::apiResource('classrooms', ClassroomController::class);
+Route::apiResource('laboratories', LaboratoryController::class);
 
 
 //Route::get('/subjects', [SubjectController::class, 'index']);
