@@ -7,6 +7,7 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\LaboratoryController;
 use App\Http\Controllers\AssignedLabController;
+use App\Http\Controllers\AssignedClassController;
 use App\Models\Subject;
 
 //Route::get('/', function () {
@@ -19,6 +20,7 @@ Route::apiResource('teachers', TeacherController::class);
 Route::apiResource('classrooms', ClassroomController::class);
 Route::apiResource('laboratories', LaboratoryController::class);
 Route::apiResource('assigned_labs', AssignedLabController::class);
+Route::apiResource('assigned_classes', AssignedClassController::class);
 
 
 //Route::get('/subjects', [SubjectController::class, 'index']);
