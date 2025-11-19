@@ -10,10 +10,21 @@ use App\Http\Controllers\AssignedLabController;
 use App\Http\Controllers\AssignedClassController;
 use App\Models\Subject;
 
+use App\Http\Controllers\AuthController;
+
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+
+
+Route::middleware('auth:api')->group(function () {
+    Route::get('/user', [AuthController::class, 'me']);
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
+
 //Route::get('/', function () {
     //return view('welcome');
 //});
-
+Route::middleware('auth:sanctum')->group(function () {
 Route::apiResource('subjects', SubjectController::class);
 Route::apiResource('groups', GroupController::class);
 Route::apiResource('teachers', TeacherController::class);
@@ -21,7 +32,7 @@ Route::apiResource('classrooms', ClassroomController::class);
 Route::apiResource('laboratories', LaboratoryController::class);
 Route::apiResource('assigned_labs', AssignedLabController::class);
 Route::apiResource('assigned_classes', AssignedClassController::class);
-
+});
 
 //Route::get('/subjects', [SubjectController::class, 'index']);
 //Route::get('/subjects{id}', [SubjectController::class, 'show']);
